@@ -2,9 +2,13 @@
   "name": "server",
   "version": "1.0.0",
   "description": "Backend for language learning app",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "build": "npm i"
+
   },
   "keywords": [
     "language",
@@ -21,6 +25,10 @@
     "jsonwebtoken": "^9.0.2",
     "mongodb": "^6.2.0",
     "mongoose": "^7.6.3",
+   
     "postcss": "^8.4.31"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
   }
 }
