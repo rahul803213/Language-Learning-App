@@ -2,26 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+
+@font-face {
+  font-family: 'DIN Round Pro';
+  src: local('DIN Round Pro Black'), local('DIN-Round-Pro-Black'),
+      url('DINRoundPro-Black.woff2') format('woff2'),
+      url('DINRoundPro-Black.woff') format('woff'),
+      url('DINRoundPro-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer base {
+  body {
+    font-family: 'DIN Round Pro', sans-serif;
+    background-color:white; /* Change the background color to gray-100 if that's your intention */
+    padding: 2rem; /* Adjust the padding to your needs */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh; /* Use 100vh for full viewport height */
   }
 }
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer components{
+  .intent{
+  @apply flex justify-between items-center hover:shadow-xl p-4 cursor-pointer rounded-lg 
+       text-black bg-white max-w-md mx-auto xl:mx-0;    }
 }

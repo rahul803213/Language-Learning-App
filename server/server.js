@@ -3,6 +3,12 @@ const path= require('path');
 const express = require('express');
 const cors = require('cors');
 const db = require("./database/db");
+
+//Routes
+const userRoutes = require('./routes/userRoutes');
+
+
+
 const PORT = process.env.PORT || 4000;
 
 //database
@@ -25,6 +31,9 @@ const corsOptions = {
   app.get("/", (req, res) => {
     res.json({ name: "rahul" });
   });
+//Routing of different api endpoint using router 
+//Here we are using mvc pattern in the backend
+  app.use('/api/users', userRoutes);
 
   app.listen(PORT, () => {
     console.log(` is running on http://localhost:${PORT}`);
