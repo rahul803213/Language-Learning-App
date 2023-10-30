@@ -86,6 +86,7 @@ const snapShot = await userRef.get();
 if(!snapShot.exits){
 
 const {displayName,email} = userAuth;
+console.log(displayName);
 //if(additionalData) displayName=additionalData.displayName;
 const createdAt = new Date();
 

@@ -57,9 +57,10 @@ else{
    
     try{
         const {user} = await auth.createUserWithEmailAndPassword(email,password);
-        console.log({user});
-        await createUserProfileDocument(user,{displayName,want_to_learn,Proficiency_level});
-      
+       
+      const data=  await createUserProfileDocument(user,{displayName,want_to_learn,Proficiency_level});
+        const d = await data.get();
+        console.log(d);
 
         this.setState({
             email:"",
