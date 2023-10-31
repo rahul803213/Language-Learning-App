@@ -1,7 +1,7 @@
 "use client"
 
 import React from 'react'
-import SignIn from '@/components/SignIn/SignIn.component'
+import SignIn from '@/components/SignIn-f/SignIn.component'
 function page() {
   return (
     <div className='bg-white'>
