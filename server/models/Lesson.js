@@ -1,16 +1,10 @@
 const mongoose = require('mongoose');
-
-const questionSchema = new mongoose.Schema({
-  question: String,
-  options: [String],
-  correctOption: Number,
-  level: Number,
-});
+const Question = require('./Question');
 
 const lessonSchema = new mongoose.Schema({
   lessonId: Number,
   language: String,
-  questions: [questionSchema],
+  questions: [Question],
 });
 
 const lessonModel = mongoose.model('Lesson', lessonSchema);
